@@ -1,7 +1,5 @@
-module.exports = {
-  compile: {
-    files: {
+module.exports =
+  compile:
+    files:
       'tmp/public/assets/app.css': 'app/styles/**/*.styl'
-    }
-  }
-};
+
