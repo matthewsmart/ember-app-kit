@@ -8,6 +8,7 @@ module.exports = {
     tasks: ['build:debug', 'karma:server:run']
   },
   options: {
-    debounceDelay: 200
+    debounceDelay: 200,
+    livereload: 35729
   }
 };

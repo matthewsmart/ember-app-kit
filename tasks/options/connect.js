@@ -3,6 +3,12 @@ var lockFile = require('lockfile'),
     url = require('url');
 
 module.exports = {
+  livereload: {
+    options: {
+      base: 'tmp/public',
+      middleware: middleware
+    }
+  },
   server: {
     options: {
       port: process.env.PORT || 8000,
@@ -62,6 +68,7 @@ function buildWildcardMiddleware(options) {
 
 function middleware(connect, options) {
   return [
+    require('connect-livereload')(),
     lock,
     connect['static'](options.base),
     connect.directory(options.base),
